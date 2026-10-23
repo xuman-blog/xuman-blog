@@ -1,4 +1,4 @@
-# Xuman 的博客（xuman.lovie.me）
+# 我的博客
 
 纯静态站点，无需构建：`index.html` 首页、`posts/` 文章页、`style.css` 样式、`CNAME` 自定义域名（GitHub Pages 用）。
 
