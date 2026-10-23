@@ -5,6 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>0-6个月照片 · 成长记录</title>
 <link rel="stylesheet" href="../style.css">
+<style>
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 16px; }
+.gallery figure { margin: 0; }
+.gallery img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 5; border-radius: 8px; display: block; }
+.gallery img.wide { aspect-ratio: 16 / 10; }
+.gallery .full { grid-column: 1 / -1; }
+.gallery .full img { aspect-ratio: auto; max-height: 80vh; }
+@media (min-width: 768px) { .gallery { grid-template-columns: repeat(3, 1fr); } }
+</style>
 </head>
 <body>
 <div class="scanlines"></div>
@@ -17,8 +26,18 @@
 <article class="post">
 <h1>0-6个月照片</h1>
 <time datetime="2026-10-23">2026 年 10 月 23 日</time>
-<p>照片陆续添加中 📷</p>
-<p>这里是 0 到 6 个月照片的相册区，照片还没有上传，等收集齐了会一张一张放进来。</p>
+<p>从第一天到现在，一张一张慢慢长大 📷</p>
+<div class="gallery">
+<figure class="full"><a href="../images/photo-01.jpg"><img src="../images/photo-01.jpg" alt="出生第一天"></a></figure>
+<figure class="full"><a href="../images/photo-02.jpg"><img class="wide" src="../images/photo-02.jpg" alt="小脚丫"></a></figure>
+<figure><a href="../images/photo-03.jpg"><img src="../images/photo-03.jpg" alt="睡觉"></a></figure>
+<figure><a href="../images/photo-04.jpg"><img src="../images/photo-04.jpg" alt="睡觉"></a></figure>
+<figure><a href="../images/photo-05.jpg"><img src="../images/photo-05.jpg" alt="睡觉特写"></a></figure>
+<figure class="full"><a href="../images/photo-06.jpg"><img class="wide" src="../images/photo-06.jpg" alt="趴着抬头"></a></figure>
+<figure class="full"><a href="../images/photo-07.jpg"><img class="wide" src="../images/photo-07.jpg" alt="游泳"></a></figure>
+<figure><a href="../images/photo-08.jpg"><img src="../images/photo-08.jpg" alt="哭"></a></figure>
+<figure><a href="../images/photo-09.jpg"><img src="../images/photo-09.jpg" alt="玩玩具"></a></figure>
+</div>
 </article>
 </main>
 <footer><p>© 2026 成长记录</p></footer>
