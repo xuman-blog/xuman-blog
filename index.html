@@ -1,68 +1,61 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>成长记录</title>
-<meta name="description" content="成长记录 — 游戏、动漫与生活记录">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>成长记录</title>
+  <meta name="description" content="成长记录 — 游戏、动漫与生活记录">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="scanlines"></div>
-<header class="site-header">
-  <a class="logo" href="index.html">&gt; 成长记录<span class="cursor">_</span></a>
-  <nav>
-    <a href="index.html" class="active">首页</a>
-    <a href="#about">关于</a>
-    <button id="theme-toggle" aria-label="切换深浅色">☀️</button>
-  </nav>
-</header>
+  <div class="scanlines"></div>
+  <header class="site-header">
+    <a class="logo" href="index.html">&gt; 成长记录<span class="cursor">_</span></a>
+    <nav>
+      <a href="index.html" class="active">首页</a>
+      <a href="#about">关于</a>
+      <button id="theme-toggle" aria-label="切换深浅色">☀️</button>
+    </nav>
+  </header>
 
-<main>
-  <section class="hero">
-    <p class="hero-kicker">// PERSONAL LOG · SYSTEM ONLINE</p>
-    <h1 class="glitch">成长记录</h1>
-    <p class="hero-sub">记录游戏、动漫和生活里的小事——一步一步，慢慢变强。</p>
-  </section>
+  <main>
+    <section class="hero">
+      <p class="hero-kicker">// PERSONAL LOG · SYSTEM ONLINE</p>
+      <h1 class="glitch">成长记录</h1>
+      <p class="hero-sub">记录游戏、动漫和生活里的小事——一步一步，慢慢变强。</p>
+    </section>
 
-  <section class="post-list">
-    <h2 class="section-title">&gt; 最新文章</h2>
+    <section class="post-list">
+      <h2 class="section-title">&gt; 最新文章</h2>
 
-    <article class="post-card">
-      <time datetime="2026-10-23">2026-10-23</time>
-      <h3><a href="posts/hello-world.html">你好，世界 — 我的博客开张了</a></h3>
-      <p>第一篇文章，简单说说为什么想搭这个博客，以及以后打算写点什么。</p>
-      <span class="tag">随笔</span>
-    </article>
+      <article class="post-card">
+        <time datetime="2026-10-23">2026-10-23</time>
+        <h3><a href="posts/photos-0-6-months.html">0-6个月照片</a></h3>
+        <p>0 到 6 个月的照片记录，陆续更新。</p>
+        <span class="tag">照片</span>
+      </article>
+    </section>
 
-    <article class="post-card">
-      <time datetime="2026-10-23">2026-10-23</time>
-      <h3><a href="posts/persona4.html">为什么我更喜欢 Persona 4</a></h3>
-      <p>作为一个 P4 派，聊聊这款游戏打动我的地方，还有对 Persona 4 Revival 的期待。</p>
-      <span class="tag">游戏</span>
-    </article>
-  </section>
+    <section id="about" class="about">
+      <h2 class="section-title">&gt; 关于我</h2>
+      <p>JRPG 爱好者，Persona 系列粉丝。喜欢动漫、游戏，偶尔研究一下新工具。这个博客会慢慢更新，想到什么写什么。</p>
+      <p class="about-note">（这段是占位文字，把你想写的自我介绍发我，我帮你换上。）</p>
+    </section>
+  </main>
 
-  <section id="about" class="about">
-    <h2 class="section-title">&gt; 关于我</h2>
-    <p>JRPG 爱好者，Persona 系列粉丝。喜欢动漫、游戏，偶尔研究一下新工具。这个博客会慢慢更新，想到什么写什么。</p>
-    <p class="about-note">（这段是占位文字，把你想写的自我介绍发我，我帮你换上。）</p>
-  </section>
-</main>
+  <footer>
+    <p>© 2026 成长记录 · xuman.lovie.me · POWERED BY CLOUDFLARE PAGES</p>
+  </footer>
 
-<footer>
-  <p>© 2026 成长记录 · xuman.lovie.me · POWERED BY CLOUDFLARE PAGES</p>
-</footer>
-
-<script>
-  const btn = document.getElementById('theme-toggle');
-  const saved = localStorage.getItem('theme');
-  if (saved === 'light') { document.body.classList.add('light'); btn.textContent = '🌙'; }
-  btn.addEventListener('click', () => {
-    const light = document.body.classList.toggle('light');
-    localStorage.setItem('theme', light ? 'light' : 'dark');
-    btn.textContent = light ? '🌙' : '☀️';
-  });
-</script>
+  <script>
+    const btn = document.getElementById('theme-toggle');
+    const saved = localStorage.getItem('theme');
+    if (saved === 'light') { document.body.classList.add('light'); btn.textContent = '🌙'; }
+    btn.addEventListener('click', () => {
+      const light = document.body.classList.toggle('light');
+      localStorage.setItem('theme', light ? 'light' : 'dark');
+      btn.textContent = light ? '🌙' : '☀️';
+    });
+  </script>
 </body>
 </html>
