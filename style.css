@@ -1,103 +1,102 @@
-/* ===== 赛博风 · Cyberpunk ===== */
+/* ===== 温馨舒适 · Warm & Cozy ===== */
 :root {
-  --bg: #05060f;
-  --bg-grid: rgba(0, 240, 255, .05);
-  --text: #d7f9ff;
-  --muted: #7d8aa5;
-  --card: rgba(10, 14, 34, .85);
-  --border: rgba(0, 240, 255, .35);
-  --neon: #00f0ff;      /* 青蓝霓虹 */
-  --neon2: #ff2ec4;     /* 品红霓虹 */
-  --accent: #fcee0a;    /* 赛博黄 */
-  --glow: 0 0 6px rgba(0,240,255,.8), 0 0 18px rgba(0,240,255,.35);
+  --bg: #faf6ef;            /* 暖米白 */
+  --surface: #fffdf8;       /* 卡片奶白 */
+  --text: #4a3b2f;          /* 暖棕墨 */
+  --muted: #9a8471;         /* 柔和褐灰 */
+  --border: #ecdfca;        /* 沙色邊線 */
+  --accent: #c05f33;        /* 陶土橘 */
+  --accent-soft: rgba(192, 95, 51, .1);
+  --sage: #77875a;          /* 鼠尾草綠（標籤） */
+  --sage-soft: rgba(119, 135, 90, .12);
+  --shadow: 0 2px 12px rgba(133, 94, 55, .08);
+  --shadow-hover: 0 8px 24px rgba(133, 94, 55, .13);
+  --radius: 18px;
 }
-body.light {
-  --bg: #e8ecf8;
-  --bg-grid: rgba(255, 46, 196, .06);
-  --text: #12142b;
-  --muted: #5a6480;
-  --card: rgba(255, 255, 255, .9);
-  --border: rgba(255, 46, 196, .4);
-  --glow: 0 0 6px rgba(255,46,196,.45);
+body.dark {
+  --bg: #251b14;            /* 深可可 */
+  --surface: #33261c;
+  --text: #f2e7d8;
+  --muted: #bfa78f;
+  --border: #4d3a2a;
+  --accent: #e59a6d;
+  --accent-soft: rgba(229, 154, 109, .14);
+  --sage: #a9bc8a;
+  --sage-soft: rgba(169, 188, 138, .14);
+  --shadow: 0 2px 12px rgba(0, 0, 0, .25);
+  --shadow-hover: 0 8px 24px rgba(0, 0, 0, .35);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body {
-  font-family: "JetBrains Mono", "SF Mono", Consolas, "PingFang SC", "Microsoft YaHei", "Noto Sans SC", monospace, sans-serif;
-  background:
-    linear-gradient(var(--bg-grid) 1px, transparent 1px),
-    linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px),
-    var(--bg);
-  background-size: 34px 34px, 34px 34px, auto;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
+  background: var(--bg);
   color: var(--text);
-  line-height: 1.7;
+  line-height: 1.8;
   min-height: 100vh;
-}
-.scanlines {
-  pointer-events: none; position: fixed; inset: 0; z-index: 50;
-  background: repeating-linear-gradient(0deg, rgba(255,255,255,.025) 0 1px, transparent 1px 3px);
-  mix-blend-mode: overlay;
+  transition: background .3s, color .3s;
 }
 a { color: inherit; text-decoration: none; }
 .site-header {
-  max-width: 760px; margin: 0 auto; padding: 20px 16px;
+  max-width: 760px; margin: 0 auto; padding: 22px 16px;
   display: flex; justify-content: space-between; align-items: center;
   border-bottom: 1px solid var(--border);
 }
 .logo {
-  font-size: 20px; font-weight: 800; letter-spacing: 1px; color: var(--neon);
-  text-shadow: var(--glow);
+  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  font-size: 21px; font-weight: 700; letter-spacing: 2px; color: var(--text);
 }
-.logo .cursor { color: var(--neon2); animation: blink 1.1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
 nav { display: flex; gap: 18px; align-items: center; }
-nav a { color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: 1px; }
-nav a.active, nav a:hover { color: var(--neon); text-shadow: var(--glow); }
+nav a { color: var(--muted); font-size: 14px; transition: color .2s; }
+nav a.active { color: var(--accent); font-weight: 600; }
+nav a:hover { color: var(--accent); }
 #theme-toggle {
-  background: transparent; border: 1px solid var(--border); color: var(--text);
-  padding: 4px 10px; cursor: pointer; font-size: 14px;
-  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
+  background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  padding: 5px 12px; cursor: pointer; font-size: 14px; border-radius: 999px;
+  box-shadow: var(--shadow); transition: transform .15s, box-shadow .2s;
 }
-main { max-width: 760px; margin: 0 auto; padding: 0 16px 44px; position: relative; }
-.hero { padding: 42px 0 38px; }
-.hero-kicker { color: var(--neon2); font-size: 12px; letter-spacing: 3px; margin-bottom: 12px; }
+#theme-toggle:hover { transform: translateY(-1px); box-shadow: var(--shadow-hover); }
+#theme-toggle:active { transform: translateY(1px); }
+main { max-width: 760px; margin: 0 auto; padding: 0 16px 48px; position: relative; }
+.hero { padding: 48px 0 40px; text-align: center; }
+.hero-kicker { color: var(--accent); font-size: 13px; letter-spacing: 4px; margin-bottom: 14px; }
 .hero h1 {
-  font-size: 46px; font-weight: 900; letter-spacing: 4px; color: #fff;
-  text-shadow: 0 0 8px rgba(0,240,255,.9), 0 0 26px rgba(0,240,255,.5), 3px 3px 0 var(--neon2);
+  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  font-size: 44px; font-weight: 700; letter-spacing: 6px; color: var(--text);
 }
-body.light .hero h1 { color: var(--text); text-shadow: 2px 2px 0 var(--neon), -2px -2px 0 rgba(255,46,196,.5); }
-.hero-sub { color: var(--muted); font-size: 15px; margin-top: 12px; }
+.hero-sub { color: var(--muted); font-size: 15px; margin-top: 14px; }
 .section-title {
-  font-size: 16px; margin: 30px 0 16px; color: var(--neon); letter-spacing: 2px;
-  text-shadow: var(--glow);
+  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  font-size: 19px; font-weight: 700; margin: 34px 0 16px; color: var(--text);
+  letter-spacing: 2px;
 }
 .post-card {
-  background: var(--card); border: 1px solid var(--border); padding: 18px 20px; margin-bottom: 14px;
-  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px));
-  transition: box-shadow .2s, border-color .2s, transform .2s;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px 22px; margin-bottom: 14px; box-shadow: var(--shadow);
+  transition: box-shadow .25s, transform .25s;
 }
-.post-card:hover {
-  border-color: var(--neon); transform: translateX(4px);
-  box-shadow: -4px 0 0 var(--neon2), 0 0 18px rgba(0,240,255,.25);
-}
+.post-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
 .post-card time { color: var(--accent); font-size: 12px; letter-spacing: 1px; }
 .post-card h3 { font-size: 18px; margin: 6px 0; }
-.post-card h3 a:hover { color: var(--neon); text-shadow: var(--glow); }
+.post-card h3 a { transition: color .2s; }
+.post-card h3 a:hover { color: var(--accent); }
 .post-card p { color: var(--muted); font-size: 14px; }
 .tag {
-  display: inline-block; margin-top: 10px; font-size: 11px; letter-spacing: 1px;
-  color: var(--neon2); border: 1px solid var(--neon2); padding: 1px 10px;
-  text-shadow: 0 0 6px rgba(255,46,196,.6);
+  display: inline-block; margin-top: 10px; font-size: 12px;
+  color: var(--sage); background: var(--sage-soft); padding: 2px 12px; border-radius: 999px;
 }
 .about p { color: var(--muted); font-size: 14px; margin-bottom: 8px; }
 .about-note { font-size: 12px; opacity: .75; }
 article.post { padding-top: 16px; }
-article.post h1 { font-size: 25px; margin: 8px 0 16px; color: #fff; text-shadow: 0 0 10px rgba(0,240,255,.6), 2px 2px 0 var(--neon2); }
-body.light article.post h1 { color: var(--text); }
+article.post h1 {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  font-size: 27px; font-weight: 700; margin: 8px 0 16px; color: var(--text); letter-spacing: 1px;
+}
 article.post time { color: var(--accent); font-size: 12px; letter-spacing: 1px; }
 article.post p { margin-bottom: 14px; font-size: 15px; }
-.back { color: var(--neon); font-size: 13px; letter-spacing: 1px; }
+.back { color: var(--accent); font-size: 13px; }
+.back:hover { text-decoration: underline; }
 footer {
   border-top: 1px solid var(--border); color: var(--muted);
-  text-align: center; font-size: 11px; letter-spacing: 2px; padding: 22px 16px;
+  text-align: center; font-size: 12px; letter-spacing: 1px; padding: 22px 16px;
 }
 @media (max-width: 520px) { .hero h1 { font-size: 34px; } }

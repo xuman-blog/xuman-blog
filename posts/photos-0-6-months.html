@@ -6,9 +6,10 @@
 <title>0-6个月照片 · 成长记录</title>
 <link rel="stylesheet" href="../style.css">
 <style>
-.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-top: 16px; }
-.gallery figure { margin: 0; }
-.gallery img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 5; border-radius: 8px; display: block; }
+.gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 16px; }
+.gallery figure { margin: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 2px 12px rgba(133, 94, 55, .1); }
+.gallery img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 5; display: block; transition: transform .45s ease; }
+.gallery a:hover img { transform: scale(1.03); }
 .gallery img.wide { aspect-ratio: 16 / 10; }
 .gallery .full { grid-column: 1 / -1; }
 .gallery .full img { aspect-ratio: auto; max-height: 80vh; }
@@ -16,9 +17,8 @@
 </style>
 </head>
 <body>
-<div class="scanlines"></div>
 <header class="site-header">
-<a class="logo" href="../index.html">&gt; 成长记录<span class="cursor">_</span></a>
+<a class="logo" href="../index.html">🌱 成长记录</a>
 <nav><a href="../index.html">首页</a></nav>
 </header>
 <main>
